@@ -107,5 +107,9 @@ public class Task {
     public String toString() {
         return "Task{" + "id=" + id + ", idProject=" + idProject + ", name=" + name + ", description=" + description + ", notes=" + notes + ", completed=" + completed + ", deadline=" + deadline + ", createdAT=" + createdAT + ", updatedAT=" + updatedAT + '}';
     }
+
+    public void setIDProject(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
