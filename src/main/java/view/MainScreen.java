@@ -4,21 +4,31 @@
  */
 package view;
 
+import controller.ProjectController;
+import controller.TaskController;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.List;
+import javax.swing.DefaultListModel;
+import model.Project;
 
 /**
  *
  * @author dodos
  */
-public class MainScreen extends javax.swing.JFrame {
+public final class MainScreen extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainScreen
-     */
+    ProjectController projectController;
+    TaskController taskController;
+    
+    DefaultListModel projectModel;
+    
     public MainScreen() {
         initComponents(); 
         decorateTableTask();
+        
+        initDataController();
+        initComponentsModel();
     }
 
     /**
@@ -381,5 +391,25 @@ public class MainScreen extends javax.swing.JFrame {
         //Criando um sort automático para as colunas da table
         jTableTasks.setAutoCreateRowSorter(true);
     }
+    
+    public void initDataController(){
+        projectController = new ProjectController();
+        taskController = new TaskController();
+    }
+    
+    public void initComponentsModel(){
+        projectModel = new DefaultListModel();
+        loadProjects();
+    }
 
+    public void loadProjects(){
+        List<Project> projects = projectController.getAll();
+        projectModel.clear();
+        
+        for(int i=0; i<projects.size() - 1; i++){
+            Project project = projects.get(i);
+            projectModel.addElement(project);
+        } 
+        jListProjects.setModel(projectModel);
+    }
 }
