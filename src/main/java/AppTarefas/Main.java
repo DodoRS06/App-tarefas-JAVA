@@ -12,29 +12,29 @@ public class Main {
         
         ProjectController projectController = new ProjectController();
         TaskController taskController = new TaskController();
-        /*
+        
         Task task = new Task();
         //task.setId(12);
-        task.setIdProject(13);
+        task.setIdProject(18);
         task.setName("Novo nome do projeto");
         task.setDescription("description");
         task.setCompleted(false);
         task.setNotes("Novo nome do projeto");
         task.setDeadline(new Date());
         //project.setName("Projeto teste");
-        taskController.update(task);
-        */
-        Project project = new Project();
-        project.setId(14);
+        taskController.save(task);
+        
+        //Project project = new Project();
+        //project.setId(14);
         //task.setIdProject(13);
-        project.setName("novo nome do projeto");
+        //project.setName("novo nome do projeto");
         //project.setName("Projeto teste");
-        project.setDescription("description");
+        //project.setDescription("description");
         //task.setCompleted(true);
         //task.setNotes("Novo nome do projeto");
         
         
-        projectController.update(project);
+        //projectController.update(project);
         
         //taskController.removeById(12);
         
